@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Table from 'rc-table';
 import React, { useState } from 'react';
 import Pagination from 'react-js-pagination';
@@ -5,7 +6,7 @@ import Pagination from 'react-js-pagination';
 const SubCategoryTable = () => {
 	const columns = [
 		{
-			title: 'Name',
+			title: 'Donor',
 			dataIndex: 'name',
 			key: 'name',
 			width: 400,
@@ -13,14 +14,14 @@ const SubCategoryTable = () => {
 			rowClassName: 'bg-black-ripon',
 		},
 		{
-			title: 'Category',
+			title: 'Blood Type',
 			dataIndex: 'subCount',
 			key: 'subCount',
 			width: 400,
 			className: 'text-black p-2 border-r-2 border-b-2',
 		},
 		{
-			title: 'Total Product',
+			title: 'Capacity',
 			dataIndex: 'productCount',
 			key: 'productCount',
 			width: 400,
@@ -35,20 +36,20 @@ const SubCategoryTable = () => {
 			render: () => (
 				<>
 					<a
-						href='#'
-						className='bg-blue-500 hover:bg-blue-400 text-white py-1 px-3 rounded-full'
+						href="#"
+						className="bg-blue-500 hover:bg-blue-400 text-white py-1 px-3 rounded-full"
 					>
 						View
 					</a>{' '}
 					<a
-						href='/update-bags/7oBGXNcXRdMKLfoEs2WjhP5iRtwnMDkvvHFipqnzAGmq'
-						className='bg-green-500 hover:bg-green-400 text-white py-1 px-3 rounded-full'
+						href="/update-bags/7oBGXNcXRdMKLfoEs2WjhP5iRtwnMDkvvHFipqnzAGmq"
+						className="bg-green-500 hover:bg-green-400 text-white py-1 px-3 rounded-full"
 					>
 						Update
 					</a>{' '}
 					<a
-						href='#'
-						className='bg-red-500 hover:bg-red-400 text-white  py-1 px-3 rounded-full'
+						href="#"
+						className="bg-red-500 hover:bg-red-400 text-white  py-1 px-3 rounded-full"
 					>
 						Burn
 					</a>
@@ -58,8 +59,18 @@ const SubCategoryTable = () => {
 	];
 
 	const data = [
-		{ id: '001', name: 'Jack', subCount: 28, productCount: 'some where' },
-		{ id: '002', name: 'Rose', subCount: 36, productCount: 'some where' },
+		{
+			id: '001',
+			name: '5n4GKcTmZnwMM5BoF5BWrM3CmneP48hMSJrS3ywvNJmC',
+			subCount: 'AB',
+			productCount: '200cc',
+		},
+		{
+			id: '002',
+			name: '0x61391dBA277dA6ffC2856528E02cB603aE7fe7A9',
+			subCount: "O+",
+			productCount: '350cc',
+		},
 	];
 
 	//Pagination

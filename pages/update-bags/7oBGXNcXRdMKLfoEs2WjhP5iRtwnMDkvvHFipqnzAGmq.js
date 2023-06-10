@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const UpdateNFT = () => {
 	const [file, setfile] = useState(null);
@@ -41,11 +42,11 @@ const UpdateNFT = () => {
 
 		axios({
 			// Endpoint to send files
-			url: 'https://a...content-available-to-author-only...t.to/sol/v1/nft/update',
-			method: 'PUT',
+			url: 'https://api.shyft.to/sol/v1/nft/update',
+			method: 'POST',
 			headers: {
 				'Content-Type': 'multipart/form-data',
-				'x-api-key': '', //Enter your x-api-key here
+				'x-api-key': 'Y1laRRrKCpxxuvVl',
 				Accept: '*/*',
 				'Access-Control-Allow-Origin': '*',
 			},
@@ -54,7 +55,7 @@ const UpdateNFT = () => {
 			data: formData,
 		})
 			// Handle the response from backend here
-			.then(res => {
+			.then((res) => {
 				console.log(res);
 				setStatus('Success:' + JSON.stringify(res.data.success));
 				setTxHash(res.data.result.txtId);
@@ -64,7 +65,7 @@ const UpdateNFT = () => {
 			})
 
 			// Catch errors if any
-			.catch(err => {
+			.catch((err) => {
 				console.warn(err);
 			});
 	};
